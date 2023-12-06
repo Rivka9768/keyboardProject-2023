@@ -2,7 +2,7 @@
 import React from 'react'
 import Styles from './Keyboard.module.css'
 import { MdTextIncrease , MdTextDecrease } from "react-icons/md";
-import { SiAdobefonts } from "react-icons/si";
+import { ImFont } from "react-icons/im";
 import { IoColorPaletteSharp } from "react-icons/io5";
 const StyleText = (props) => {
     const undoStyle = () => {
@@ -56,7 +56,7 @@ const StyleText = (props) => {
             </select>
         </span>
         <span  className={Styles.keyboard__key_wide}style={{ display: "inline" }}>
-        <label htmlFor='fontsSelect'><SiAdobefonts /></label>
+        <label htmlFor='fontsSelect'><ImFont /> </label>
             <select name="fonts" id="fontsSelect" onChange={(e) => fonts(e.target.value)}>
                 <option >text font</option>
                 <option value="Courier New" >Courier New</option>
