@@ -1,10 +1,10 @@
 import React from 'react'
-const TextErea = (props) => {
+const TextErea = ({ input }) => {
 
     return (
         <>
             <div>
-                {props.input.map((element, index) => {
+                {input.map((element, index) => {
                     return <span style={element.style} key={index}>{element.letter}</span>
                 })}
             </div>

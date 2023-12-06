@@ -2,21 +2,21 @@
 import React, { useState } from 'react'
 import Styles from './Keyboard.module.css'
 
-const Keyboard = (props) => {
+const Keyboard = ({ typeOfKeyBoard, typeKeyBoard, setText, text, textStyles, setLastAction }) => {
 
     const addHandler = (key) => {
-        const prevText=props.text;
-        props.setLastAction(prevLast=>[...prevLast,{action: "setText" ,value: prevText}])
-        props.setText((prevText) => (
-            [...prevText, { letter: key, style: props.textStyles }]
+        const prevText = text;
+        setLastAction(prevLast => [...prevLast, { action: "setText", value: prevText }])
+        setText((prevText) => (
+            [...prevText, { letter: key, style: textStyles }]
         ));
     }
 
     return (
         <>
             <div >
-                {props.typeOfKeyBoard[props.typeKeyBoard].map((element, index) => {
-                    return <span className={(element===' ')?Styles.keyboard__key_wide : Styles.keyboard__key} onClick={() => addHandler(element)} key={index} name={element} value={element}>{(element===' ')?"space":element}</span>
+                {typeOfKeyBoard[typeKeyBoard].map((element, index) => {
+                    return <span className={(element === ' ') ? Styles.keyboard__key_wide : Styles.keyboard__key} onClick={() => addHandler(element)} key={index} name={element} value={element}>{(element === ' ') ? "space" : element}</span>
                 })}
             </div>
         </>

@@ -1,43 +1,43 @@
 import React from 'react'
 import Styles from './Keyboard.module.css'
-import { MdOutlineEmojiEmotions,MdEmojiSymbols } from "react-icons/md";
+import { MdOutlineEmojiEmotions, MdEmojiSymbols } from "react-icons/md";
 import { RiEnglishInput } from "react-icons/ri";
 import { BsFillCapslockFill } from "react-icons/bs";
-const KeyboardLanguage=(props)=>{
-const undoType=()=>{
-    const prevType=props.typeLanguage;
-    props.setLastAction(prevLast=>[...prevLast,{action: "setLanguage" ,value: prevType}])
-}
-    const capsLock=()=>{
+const KeyboardLanguage = ({ typeLanguage, setTypeLanguage, setLastAction }) => {
+    const undoType = () => {
+        const prevType = typeLanguage;
+        setLastAction(prevLast => [...prevLast, { action: "setLanguage", value: prevType }])
+    }
+    const capsLock = () => {
         undoType();
-        (props.typeLanguage === 3) ? props.typeSetLanguage(0) : props.typeSetLanguage(3) ;
+        (typeLanguage === 3) ? setTypeLanguage(0) : setTypeLanguage(3);
     }
 
-    const hebrew=()=>{
+    const hebrew = () => {
         undoType()
-        props.typeSetLanguage(1) ;
+        setTypeLanguage(1);
     }
 
-    const english=()=>{
+    const english = () => {
         undoType()
-        props.typeSetLanguage(0) ;
+        setTypeLanguage(0);
     }
 
-    const emoji=()=>{
+    const emoji = () => {
         undoType()
-        props.typeSetLanguage(2)
+        setTypeLanguage(2)
     }
-    const specialCharacters=()=>{
+    const specialCharacters = () => {
         undoType()
-        props.typeSetLanguage(4)
+        setTypeLanguage(4)
     }
-    return(
+    return (
         <>
-            {props.typeLanguage != 3 &&<span onClick={capsLock} className={Styles.keyboard__key_wide}><BsFillCapslockFill /></span>}
-            {props.typeLanguage != 1 &&<span onClick={ hebrew} className={Styles.keyboard__key_wide}>עברית</span>}
-            {props.typeLanguage != 0 && <span onClick={english} className={Styles.keyboard__key_wide}><RiEnglishInput /></span>}
-            {props.typeLanguage != 2 && <span onClick={emoji} className={Styles.keyboard__key_wide}><MdOutlineEmojiEmotions /></span>}
-            {props.typeLanguage != 4 && <span onClick={specialCharacters} className={Styles.keyboard__key_wide}><MdEmojiSymbols /></span>}
+            {typeLanguage != 3 && <span onClick={capsLock} className={Styles.keyboard__key_wide}><BsFillCapslockFill /></span>}
+            {typeLanguage != 1 && <span onClick={hebrew} className={Styles.keyboard__key_wide}>עברית</span>}
+            {typeLanguage != 0 && <span onClick={english} className={Styles.keyboard__key_wide}><RiEnglishInput /></span>}
+            {typeLanguage != 2 && <span onClick={emoji} className={Styles.keyboard__key_wide}><MdOutlineEmojiEmotions /></span>}
+            {typeLanguage != 4 && <span onClick={specialCharacters} className={Styles.keyboard__key_wide}><MdEmojiSymbols /></span>}
         </>
     );
 }

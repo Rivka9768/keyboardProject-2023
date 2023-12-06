@@ -20,9 +20,6 @@ const TextEditor = () => {
         fontFamily: 'Georgia',
         fontSize: '50px'
     });
-    const [fontSize, setFontSize] = useState(50);
-
-
 
     //type of keyboard
     const [type, setType] = useState(0);
@@ -46,10 +43,10 @@ const TextEditor = () => {
         <>
             <TextErea input={text} />
             <div className={Styles.keyboard}>
-                <SpecialKeys className={Styles.keyboard__keys} setText={setText} textStyles={textStyles} settextStyles={setTextStyles} setLastAction={setLastAction} text={text} undo={undo} />
-                <Keyboard typeOfKeyBoard={keyboards} setText={setText} typeKeyBoard={type} textStyles={textStyles} text={text} setLastAction={setLastAction} />
-                <KeyboardLanguage typeLanguage={type} typeSetLanguage={setType} setLastAction={setLastAction} />
-                <StyleText setLastAction={setLastAction} setTextStyles={setTextStyles} fontSize={fontSize} setfontSize={setFontSize} textStyles={textStyles} />
+                <SpecialKeys className={Styles.keyboard__keys} setText={setText} textStyles={textStyles}  setLastAction={setLastAction} text={text} undo={undo} />
+                <Keyboard typeOfKeyBoard={keyboards} typeKeyBoard={type} setText={setText} text={text} textStyles={textStyles}  setLastAction={setLastAction} />
+                <KeyboardLanguage typeLanguage={type}  setTypeLanguage={setType} setLastAction={setLastAction} />
+                <StyleText setLastAction={setLastAction} setTextStyles={setTextStyles}  textStyles={textStyles} />
             </div>
         </>
     );
