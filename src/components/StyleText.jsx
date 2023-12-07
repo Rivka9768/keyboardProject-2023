@@ -20,7 +20,7 @@ const StyleText = ({ textStyles, setTextStyles, setLastAction }) => {
         undoStyle();
         setTextStyles((prevTextStyles) => ({
             ...prevTextStyles,
-            fontSize: `${Number(prevTextStyles.fontSize.slice(0, -2)) - 20}${'px'}`
+            fontSize:((Number(prevTextStyles.fontSize.slice(0, -2)))>10)? `${Number(prevTextStyles.fontSize.slice(0, -2)) - 20}${'px'}`:prevTextStyles.fontSize
         }));
     }
     const colors = (value) => {
