@@ -4,7 +4,7 @@ import Keyboard from './Keyboard'
 import SpecialKeys from './SpecialKeys'
 import KeyboardLanguage from './KeyboardLanguage'
 import StyleText from './StyleText'
-import Styles from './Keyboard.module.css'
+import Styles from './KeyboardStyle.module.css'
 
 const TextEditor = () => {
     const englishAlphabet = [...'abcdefghijklmnopqrstuvwxyz'];
@@ -26,8 +26,9 @@ const TextEditor = () => {
 
     //text shown 
     const [text, setText] = useState([{ letter: "", style: textStyles }])
-    //adding a letter to text
+
     const [lastAction, setLastAction] = useState([])
+
     const undo = () => {
         const last = lastAction.pop();
         if (last) {
@@ -41,7 +42,7 @@ const TextEditor = () => {
     }
     return (
         <>
-            <TextErea input={text} />
+            <TextErea text={text} />
             <div className={Styles.keyboard}>
                 <SpecialKeys className={Styles.keyboard__keys} setText={setText} textStyles={textStyles}  setLastAction={setLastAction} text={text} undo={undo} />
                 <Keyboard typeOfKeyBoard={keyboards} typeKeyBoard={type} setText={setText} text={text} textStyles={textStyles}  setLastAction={setLastAction} />

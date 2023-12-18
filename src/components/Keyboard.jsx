@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import Styles from './Keyboard.module.css'
+import Styles from './KeyboardStyle.module.css'
 
 const Keyboard = ({ typeOfKeyBoard, typeKeyBoard, setText, text, textStyles, setLastAction }) => {
 

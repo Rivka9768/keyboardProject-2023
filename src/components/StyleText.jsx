@@ -1,5 +1,5 @@
 import React from 'react'
-import Styles from './Keyboard.module.css'
+import Styles from './KeyboardStyle.module.css'
 import { MdTextIncrease, MdTextDecrease } from "react-icons/md";
 import { ImFont } from "react-icons/im";
 import { IoColorPaletteSharp } from "react-icons/io5";
@@ -20,7 +20,7 @@ const StyleText = ({ textStyles, setTextStyles, setLastAction }) => {
         undoStyle();
         setTextStyles((prevTextStyles) => ({
             ...prevTextStyles,
-            fontSize:((Number(prevTextStyles.fontSize.slice(0, -2)))>10)? `${Number(prevTextStyles.fontSize.slice(0, -2)) - 20}${'px'}`:prevTextStyles.fontSize
+            fontSize: ((Number(prevTextStyles.fontSize.slice(0, -2))) > 10) ? `${Number(prevTextStyles.fontSize.slice(0, -2)) - 20}${'px'}` : prevTextStyles.fontSize
         }));
     }
     const colors = (value) => {
@@ -44,25 +44,25 @@ const StyleText = ({ textStyles, setTextStyles, setLastAction }) => {
         <span onClick={decrease} className={Styles.keyboard__key_wide}><MdTextDecrease /></span>
         <span className={Styles.keyboard__key_wide} style={{ display: "inline" }}>
             <label htmlFor="colorsSelect"><IoColorPaletteSharp /></label>
-            <select value={textStyles.color} name="colors" id="colorsSelect" onChange={(e) => colors(e.target.value)}>
-                <option value="red" >red</option>
-                <option value="black" >black</option>
-                <option value="orange">orange</option>
-                <option value="green">green</option>
-                <option value="blue">blue</option>
-                <option value="yellow">yellow</option>
-                <option value="purple">purple</option>
+            <select style={{ color: textStyles.color }} value={textStyles.color} name="colors" id="colorsSelect" onChange={(e) => colors(e.target.value)}>
+                <option style={{ color: 'red' }} value="red" >red</option>
+                <option style={{ color: 'black' }} value="black" >black</option>
+                <option style={{ color: 'orange' }} value="orange">orange</option>
+                <option style={{ color: 'green' }} value="green">green</option>
+                <option style={{ color: 'blue' }} value="blue">blue</option>
+                <option style={{ color: 'yellow' }} value="yellow">yellow</option>
+                <option style={{ color: 'purple' }} value="purple">purple</option>
             </select>
         </span>
         <span className={Styles.keyboard__key_wide} style={{ display: "inline" }}>
             <label htmlFor='fontsSelect'><ImFont /> </label>
-            <select value={textStyles.fontFamily} name="fonts" id="fontsSelect" onChange={(e) => fonts(e.target.value)}>
-                <option value="Courier New" >Courier New</option>
-                <option value="Garamond">Garamond</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="Trebuchet MS">Trebuchet MS</option>
-                <option value="Arial ">Arial </option>
+            <select style={{ fontFamily: textStyles.fontFamily }} value={textStyles.fontFamily} name="fonts" id="fontsSelect" onChange={(e) => fonts(e.target.value)}>
+                <option style={{ fontFamily: 'Geneva' }} value="Geneva" >Geneva</option>
+                <option style={{ fontFamily: 'Garamond' }} value="Garamond">Garamond</option>
+                <option style={{ fontFamily: 'Georgia' }} value="Georgia">Georgia</option>
+                <option style={{ fontFamily: 'fantasy' }} value="fantasy">fantasy</option>
+                <option style={{ fontFamily: 'cursive' }} value="cursive">cursive</option>
+                <option style={{ fontFamily: 'Arial' }} value="Arial ">Arial </option>
             </select>
         </span>
 

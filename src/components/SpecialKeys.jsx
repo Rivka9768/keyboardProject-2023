@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Styles from './Keyboard.module.css'
+import Styles from './KeyboardStyle.module.css'
 import { RiDeleteBack2Fill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 import { RxLetterCaseLowercase, RxLetterCaseUppercase } from "react-icons/rx";

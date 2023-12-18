@@ -1,5 +1,5 @@
 import React from 'react'
-import Styles from './Keyboard.module.css'
+import Styles from './KeyboardStyle.module.css'
 import { MdOutlineEmojiEmotions, MdEmojiSymbols } from "react-icons/md";
 import { RiEnglishInput } from "react-icons/ri";
 import { BsFillCapslockFill } from "react-icons/bs";
