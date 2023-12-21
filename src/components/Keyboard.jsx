@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Styles from './KeyboardStyle.module.css'
 
-const Keyboard = ({ typeOfKeyBoard, typeKeyBoard, setText, text, textStyles, setLastAction }) => {
+const Keyboard = ({ keyBoards, typeKeyBoard, setText, text, textStyles, setLastAction }) => {
 
     const addHandler = (key) => {
         const prevText = text;
@@ -15,7 +15,7 @@ const Keyboard = ({ typeOfKeyBoard, typeKeyBoard, setText, text, textStyles, set
     return (
         <>
             <div >
-                {typeOfKeyBoard[typeKeyBoard].map((element, index) => {
+                {keyBoards[typeKeyBoard].map((element, index) => {
                     return <span className={(element === ' ') ? Styles.keyboard__key_wide : Styles.keyboard__key} onClick={() => addHandler(element)} key={index} name={element} value={element}>{(element === ' ') ? "space" : element}</span>
                 })}
             </div>
