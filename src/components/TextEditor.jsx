@@ -45,7 +45,7 @@ const TextEditor = () => {
             <TextErea text={text} />
             <div className={Styles.keyboard}>
                 <SpecialKeys className={Styles.keyboard__keys} setText={setText} textStyles={textStyles}  setLastAction={setLastAction} text={text} undo={undo} />
-                <Keyboard typeOfKeyBoard={keyboards} typeKeyBoard={type} setText={setText} text={text} textStyles={textStyles}  setLastAction={setLastAction} />
+                <Keyboard keyboards={keyboards} typeKeyBoard={type} setText={setText} text={text} textStyles={textStyles}  setLastAction={setLastAction} />
                 <KeyboardLanguage typeLanguage={type}  setTypeLanguage={setType} setLastAction={setLastAction} />
                 <StyleText setLastAction={setLastAction} setTextStyles={setTextStyles}  textStyles={textStyles} />
             </div>
