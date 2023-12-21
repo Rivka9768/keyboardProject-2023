@@ -4,6 +4,7 @@ import { MdOutlineEmojiEmotions, MdEmojiSymbols } from "react-icons/md";
 import { RiEnglishInput } from "react-icons/ri";
 import { BsFillCapslockFill } from "react-icons/bs";
 const KeyboardLanguage = ({ typeLanguage, setTypeLanguage, setLastAction }) => {
+
     const undoType = () => {
         const prevType = typeLanguage;
         setLastAction(prevLast => [...prevLast, { action: "setLanguage", value: prevType }])
@@ -31,6 +32,7 @@ const KeyboardLanguage = ({ typeLanguage, setTypeLanguage, setLastAction }) => {
         undoType()
         setTypeLanguage(4)
     }
+    
     return (
         <>
             {typeLanguage != 3 && <span onClick={capsLock} className={Styles.keyboard__key_wide}><BsFillCapslockFill /></span>}
